@@ -29,7 +29,7 @@
 		}
 		function mouseLeave()
 		{
-			var canvas = document.getElementById('homepage-map-img');
+			var canvas = document.getElementById('myCanvas');
 			hdc.clearRect(0, 0, canvas.width, canvas.height);
 		}
 
@@ -73,7 +73,8 @@
 	</script>
 </head>
 
-<body>
+<body onload="init()">
+	<canvas id='myCanvas'></canvas>
 	<div class="home-section1">
 		<div class="title-border">
 		  <span class="home-title">
@@ -94,7 +95,7 @@
 		<img id="homepage-map-img" src="state_map.jpg" usemap="#image-map">
 
 		<map id="homepage-map-img" name="image-map">
-			<area target="" alt="Maryland" title="Maryland" href="maryland.html" onmousehover="mouseHover(this)" coords="1094,349,1100,374,1130,361,1157,377,1190,393,1214,389,1184,336" shape="poly">
+			<area target="" alt="Maryland" title="Maryland" href="maryland.html" onmousehover="mouseHover(this)" onemouseleave="mouseLeave(this)" coords="1094,349,1100,374,1130,361,1157,377,1190,393,1214,389,1184,336" shape="poly">
 			<area target="" alt="Texas" title="Texas" href="texas.html" coords="463,623,539,621,556,507,607,506,613,547,651,564,674,579,717,576,761,586,761,621,775,657,772,699,724,725,699,750,689,776,692,806,650,804,537,721,499,702" shape="poly">
 			<area target="" alt="New York" title="New York" href="newyork.html" coords="1075,279,1085,246,1136,224,1138,200,1157,171,1184,167,1201,215,1205,250,1214,275" shape="poly">
 			<area target="" alt="Pennsylvania" title="Pennsylvania" href="pennsylvania.html" coords="1063,295,1075,345,1184,323,1182,284" shape="poly">

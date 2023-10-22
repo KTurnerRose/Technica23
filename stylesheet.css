@@ -2,6 +2,12 @@ body{
     background-color: #A1C4CA;
 	font-family: arial;
 }
+canvas
+{
+	/* make the canvas transparent to the mouse - needed since canvas is position infront of image */
+    pointer-events: none;       
+    position: absolute;
+}
 /***********************************************************/
 /*				HOME PAGE STYLING						   */
 /***********************************************************/
@@ -54,19 +60,24 @@ body{
 	background-color: #777777;
 	border-radius: 10px;
 	height: 100px;
-	width: 400px;
+	width: 500px;
 	margin: auto;
 	text-align: center;
+	vertical-align: baseline;
 	font-size: 40px;
+	color: white;
 }
 /**************INVASIVE PLANT LISTING***********************/
+/*container for the horizontal list of plant listings*/
 .scroll-menu{
-	overflow: auto;
+	overflow-x: auto;
 	white-space: nowrap;
+	padding: 50px;
 }
 .scroll-menu::-webkit-scrollbar {
 	display: none; 
 }
+/*container for a single plant listing*/
 .invasive-listing{
 	display: inline-block;
 	padding: 20px;
@@ -92,15 +103,29 @@ body{
 .invasive-descrip-title{
 	font-size: 18px;
 	font-weight: bold;
+	width: 80%;
+}
+.invasive-listing p{
+	margin: 0;
+    padding: 0;
+	width: 80%;
 }
 .invasive-descrip{
 	font-size: 16px;
-
+	width: 80%;
 }
 
 /*********************ARCGIS MAP***************************/
+.arcGIS-section{
+	max-width: 100%;
+	max-height: 90%;
+}
 .arcGIS-descrip {
-	background-color: #777777;
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px;
+	float: right;
+	width: 40%;
 }
 .embed-container {
 	position: relative; 
