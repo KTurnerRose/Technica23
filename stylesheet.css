@@ -1,21 +1,38 @@
 body{
-    background-color: #B8EAFF;
+    background-color: #A1C4CA;
 	font-family: arial;
 }
+/***********************************************************/
+/*				HOME PAGE STYLING						   */
+/***********************************************************/
 .map-img{
+	max-width: 90%;
+}
+.home-title{
+	font-size: 60px;
+	margin: auto;
+}
+.home-descrip{
+	padding: 10%;
+}
+/*container for map image*/
 
+#homepage-map-img{
+	zoom:.01;
+	-o-transform: scale(.01);
+	margin: auto;
 }
-.state{
-    
+/*container for home page nav buttons*/
+.horizList{
+	display: flex;
+	justify-content: center;
+	padding: 10%;
 }
-.state:hover{
-    box-shadow: inset 0 0 0 0 #666;
-	color: #ffa366;
-	font-weight: bold;
-	font-size: 16px;
-	margin: 0 -.25rem;
-	padding: 0 .25rem;
-    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+#home-button{
+	padding: 10px;
+	background-color:#60a766;
+	border-radius: 10px;
+	width: 20%;
 }
 /***********************************************************/
 /*				STATE PAGE STYLING						   */
@@ -35,19 +52,39 @@ body{
 }
 .state-title{
 	background-color: #777777;
+	border-radius: 10px;
 	height: 100px;
 	width: 400px;
-	display: center;
+	margin: auto;
 	text-align: center;
+	font-size: 40px;
 }
 /**************INVASIVE PLANT LISTING***********************/
+.scroll-menu{
+	overflow: auto;
+	white-space: nowrap;
+}
+.scroll-menu::-webkit-scrollbar {
+	display: none; 
+}
 .invasive-listing{
-	background-color: pink;
+	display: inline-block;
+	padding: 20px;
+	background-color: #60a766;
 	border-radius: 10px;
 	width: 69%;
 	margin: auto;
 }
+.invasive-plant-pic{
+	position: relative;
+	width: 200px;
+	height: 200px;
+	border-radius: 10px;
+	float: right;
+}
 .invasive-title{
+	background-color: white;
+	width: 50%;
 	font-size: 20px;
 	font-weight: bold;
 	text-align: center;
@@ -59,4 +96,29 @@ body{
 .invasive-descrip{
 	font-size: 16px;
 
+}
+
+/*********************ARCGIS MAP***************************/
+.arcGIS-descrip {
+	background-color: #777777;
+}
+.embed-container {
+	position: relative; 
+	padding-bottom: 80%; 
+	max-height: 50%; 
+	max-width: 50%;
+
+} 
+.embed-container iframe, .embed-container object, .embed-container iframe {
+	position: absolute; 
+	top: 0; 
+	left: 0; 
+	width: 100%; 
+	height: 100%;
+} 
+small {
+	position: absolute; 
+	z-index: 40; 
+	bottom: 0; 
+	margin-bottom: -15px;
 }

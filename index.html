@@ -1,29 +1,109 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel='stylesheet' type='text/css' href='stylesheet.css'>
+	<script>
+		var hdc;
+		function drawPoly(coordStr)
+		{
+			var mCoords = coOrdStr.split(',');
+			var i, n;
+			n = mCoords.length;
+
+			hdc.beginPath();
+			hdc.moveTo(mCoords[0], mCoords[1]);
+			for (i=2; i<n; i+=2)
+			{
+				hdc.lineTo(mCoords[i], mCoords[i+1]);
+			}
+			hdc.lineTo(mCoords[0], mCoords[1]);
+			hdc.stroke();
+		}
+		function mouseHover(element)
+		{
+			var hoveredElement = element;
+			var coordStr = element.getAttribute('coords');
+			drawPoly(coordStr);
+		}
+		function mouseLeave()
+		{
+			var canvas = document.getElementById('homepage-map-img');
+			hdc.clearRect(0, 0, canvas.width, canvas.height);
+		}
+
+		function init()
+		{
+			// get the target image
+			var img = document.getElementById('homepage-map-img');
+
+			var x,y, w,h;
+
+			// get image position and width+height
+			x = img.offsetLeft;
+			y = img.offsetTop;
+			w = img.clientWidth;
+			h = img.clientHeight;
+
+			// move the canvas, so it's contained by the same parent as the image
+			var imgParent = img.parentNode;
+			var can = document.getElementById('homepage-map-img');
+			imgParent.appendChild(can);
+
+			// place the canvas in front of the image
+			can.style.zIndex = 1;
+
+			// position it over the image
+			can.style.left = x+'px';
+			can.style.top = y+'px';
+
+			// make same size as the image
+			can.setAttribute('width', w+'px');
+			can.setAttribute('height', h+'px');
+
+			// get image context
+			hdc = can.getContext('2d');
+
+			// set the 'default' values for the colour/width of fill/stroke operations
+			hdc.fillStyle = 'black';
+			hdc.strokeStyle = 'black';
+			hdc.lineWidth = 2;
+		}
+	</script>
+</head>
+
 <body>
-	<div class="pimg1">
-		<img class='logo' src="imgs/pursuitlogo3.png">
-		<div class="ptitle">
-		  <span class="border">
-			Conquer Climate Anxiety!
+	<div class="home-section1">
+		<div class="title-border">
+		  <span class="home-title">
+			FloraMap
 		  </span>
 		</div>
-	  </div>
-	
-	<section class="section section-dark">
-		<p>In our current times many of us are facing climate anxiety: it seems like the world is ending and there's nothing for us to do about it.</p>
-		  <p>Here you can make a difference!</p>
-		  <div class='horizList'>
-			  <div>What is Climate Anxiety?</div>
-			  <div>Resources to help anxiety</div>
-			  <div>Invasive Plants in Your Area</div>
+		<div class="home-descrip">		
+			<p>The interactive guide for your journey to make a difference in your environment.</p>
+			<p>Here you can make a difference!</p>
 		</div>
-	</section>
+		<div class='horizList'>
+			<div id="home-button">What is Climate Anxiety?</div>
+			<div id="home-button"><a href="#home-section2">Invasive Plants in Your Area</a></div>
+		</div>
+	</div>
+	<div id="home-section2">
+		<!--<div id="img-container"><img id="homepage-map-img" src="state_map.jpg"></div>-->
+		<img id="homepage-map-img" src="state_map.jpg" usemap="#image-map">
 
-	<section class="section invasive-map">
-		<span class="Title">Invasive Species</span>
-		<img src="" class="map-img">
-		<div class="state"><a href="alaska.html">Alaska</a></div>
-		
-	</section>
+		<map id="homepage-map-img" name="image-map">
+			<area target="" alt="Maryland" title="Maryland" href="maryland.html" onmousehover="mouseHover(this)" coords="1094,349,1100,374,1130,361,1157,377,1190,393,1214,389,1184,336" shape="poly">
+			<area target="" alt="Texas" title="Texas" href="texas.html" coords="463,623,539,621,556,507,607,506,613,547,651,564,674,579,717,576,761,586,761,621,775,657,772,699,724,725,699,750,689,776,692,806,650,804,537,721,499,702" shape="poly">
+			<area target="" alt="New York" title="New York" href="newyork.html" coords="1075,279,1085,246,1136,224,1138,200,1157,171,1184,167,1201,215,1205,250,1214,275" shape="poly">
+			<area target="" alt="Pennsylvania" title="Pennsylvania" href="pennsylvania.html" coords="1063,295,1075,345,1184,323,1182,284" shape="poly">
+		</map>
+	</div>
+	
+	
+
+	
 
 </body>
 </html>
