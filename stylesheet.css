@@ -38,7 +38,9 @@ canvas
 	padding: 10px;
 	background-color:#60a766;
 	border-radius: 10px;
-	width: 20%;
+	text-align: center;
+	width: 30%;
+	margin-right: 50px;
 }
 /***********************************************************/
 /*				STATE PAGE STYLING						   */
@@ -126,6 +128,21 @@ canvas
 	padding: 10px;
 	float: right;
 	width: 40%;
+}
+#state-gis-map-ss{
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+#state-graph-ss{
+	width: 60%;
+	height: 60%;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#img-container{
+	background-image: url('mdgraph.png');
 }
 .embed-container {
 	position: relative; 
