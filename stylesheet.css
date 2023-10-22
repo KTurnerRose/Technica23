@@ -1,6 +1,6 @@
 body{
-    background-color: light-blue;
-
+    background-color: #B8EAFF;
+	font-family: arial;
 }
 .map-img{
 
@@ -16,4 +16,47 @@ body{
 	margin: 0 -.25rem;
 	padding: 0 .25rem;
     transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+/***********************************************************/
+/*				STATE PAGE STYLING						   */
+/***********************************************************/
+.state-title-section{
+	background-image: url('hay.jpg');
+	position:relative;
+	background-position:center;
+	background-size:cover;
+	background-repeat:no-repeat;
+	height: 200px;
+	/*
+	  fixed = parallax
+	  scroll = normal
+	*/
+	background-attachment:fixed;
+}
+.state-title{
+	background-color: #777777;
+	height: 100px;
+	width: 400px;
+	display: center;
+	text-align: center;
+}
+/**************INVASIVE PLANT LISTING***********************/
+.invasive-listing{
+	background-color: pink;
+	border-radius: 10px;
+	width: 69%;
+	margin: auto;
+}
+.invasive-title{
+	font-size: 20px;
+	font-weight: bold;
+	text-align: center;
+}
+.invasive-descrip-title{
+	font-size: 18px;
+	font-weight: bold;
+}
+.invasive-descrip{
+	font-size: 16px;
+
 }
